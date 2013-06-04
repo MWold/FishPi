@@ -12,40 +12,6 @@ wait = 0.2
 GPIO.setmode(GPIO.BCM) 
 GPIO.setup(pinNum,GPIO.OUT) 
 
-
-
-
-
-
-
-
-#Interpret string and convert to morse code
-while True:
-	input = raw_input('please enter message: ')
-	input.upper()
-	
-	for letter in input:
-		for symbol in CODE[letter]:
-			if symbol == '-':
-				dash()
-			elif symbol == '.':
-				dot()
-			else :
-				time.sleep(wait)
-		time.sleep(wait)
-
-def dash():
-	GPIO.output(pinNum,GPIO.HIGH)
-	time.sleep(dashlen)
-	GPIO.output(pinNum,GPIO.LOW)
-	time.sleep(wait)
-	
-def dot():
-	GPIO.output(pinNum,GPIO.HIGH)
-	time.sleep(dashlen)
-	GPIO.output(pinNum,GPIO.LOW)
-	time.sleep(wait)
-  
 #Dictionary for converting from letters to morse code
 CODE = {' ': ' ', 
         "'": '.----.', 
@@ -95,3 +61,31 @@ CODE = {' ': ' ',
         'Y': '-.--', 
         'Z': '--..', 
         '_': '..--.-'}
+
+def dash():
+	GPIO.output(pinNum,GPIO.HIGH)
+	time.sleep(dashlen)
+	GPIO.output(pinNum,GPIO.LOW)
+	time.sleep(wait)
+	
+def dot():
+	GPIO.output(pinNum,GPIO.HIGH)
+	time.sleep(dashlen)
+	GPIO.output(pinNum,GPIO.LOW)
+	time.sleep(wait)
+
+
+#Interpret string and convert to morse code
+while True:
+	input = raw_input('please enter message: ')
+	input.upper()
+	
+	for letter in input:
+		for symbol in CODE[letter]:
+			if symbol == '-':
+				dash()
+			elif symbol == '.':
+				dot()
+			else :
+				time.sleep(wait)
+		time.sleep(wait)

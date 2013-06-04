@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-LED is connected to pin 1
+#LED is connected to pin 1
 pinNum = 1 
 #dashes are twice as long as dots
 dashlen = 1
@@ -12,17 +12,17 @@ wait = 0.2
 GPIO.setmode(GPIO.BCM) 
 GPIO.setup(pinNum,GPIO.OUT) 
 
-#set LED to flash forever
-while True:
-	GPIO.output(pinNum,GPIO.HIGH)
-	time.sleep(0.5)
-	GPIO.output(pinNum,GPIO.LOW)
-	time.sleep(0.5)
+
+
+
+
+
+
 
 #Interpret string and convert to morse code
-def toMorse(s):
-	input = raw_input('please enter message')
-	iput.upper()
+while True:
+	input = raw_input('please enter message: ')
+	input.upper()
 	
 	for letter in input:
 		for symbol in CODE[letter]:

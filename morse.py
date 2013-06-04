@@ -4,7 +4,7 @@ import time
 #LED is connected to pin 1
 pinNum = 1 
 #dashes are twice as long as dots
-dashlen = 1
+dashlen = 0.5
 dotlent = dashlen/2
 #Time to wait between each signal
 wait = 0.2
@@ -81,7 +81,7 @@ while True:
 	input.upper()
 	
 	for letter in input:
-		for symbol in CODE[letter]:
+		for symbol in CODE[letter.upper()]:
 			if symbol == '-':
 				dash()
 			elif symbol == '.':

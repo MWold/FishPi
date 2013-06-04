@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-#LED is connected to pin 1
+LED is connected to pin 1
 pinNum = 1 
 #dashes are twice as long as dots
 dashlen = 1
@@ -26,9 +26,9 @@ def toMorse(s):
 	
 	for letter in input:
 		for symbol in CODE[letter]:
-			if symbol == '-'
+			if symbol == '-':
 				dash()
-			elif symbol == '.'
+			elif symbol == '.':
 				dot()
 			else :
 				time.sleep(wait)

@@ -4,7 +4,9 @@ import glob
 #Program to read the temperature from a digital sensor attached to the Pi
 
 #Shell commands to the OS to load drivers for sensor
+#Ensure that we are in root
 os.system('cd /')
+#Initiate the sensor
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
